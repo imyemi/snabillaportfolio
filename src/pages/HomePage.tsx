@@ -149,11 +149,11 @@ const HomePage = () => {
 
         <div className="flex gap-8 px-5 md:px-10 overflow-x-auto no-scrollbar pb-10">
           {[
-            "https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&q=80",
-            "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?w=600&q=80",
-            "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=600&q=80",
-            "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80",
-            "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80"
+            "https://raw.githubusercontent.com/imyemi/snabillaportfolio/9af0e835dfdf16f6cb0cbd9cf6258541ad140938/jennie%20shots.webp",
+            "https://raw.githubusercontent.com/imyemi/snabillaportfolio/6ad3445f0cd9893d7f542fe76a4445f5b7dd7e40/original-78a5897a1ae74de8dead44392f1b3d5b.webp",
+            "https://raw.githubusercontent.com/imyemi/snabillaportfolio/f8e83553a9e494cfc3b10820240cd66debd19bda/homes%20that%20match.webp",
+            "https://raw.githubusercontent.com/imyemi/snabillaportfolio/930ac319f5d6c48752dd239f411a8a7601141372/original-5e7022f9f16b37fa88bf8af12288695c.webp",
+            "https://raw.githubusercontent.com/imyemi/snabillaportfolio/930ac319f5d6c48752dd239f411a8a7601141372/original-fadfbefeca7358ee7d1b11c8cb6343b2.webp"
           ].map((img, i) => (
             <motion.div 
               key={i}
@@ -203,7 +203,7 @@ const HomePage = () => {
                   className="aspect-[4/5] bg-zinc-900 rounded-[20px] overflow-hidden shadow-2xl relative group"
                 >
                   <img 
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80" 
+                    src="https://raw.githubusercontent.com/imyemi/snabillaportfolio/9ac9c0c07abd6d902f45d238b26642cc84c6750b/miphoto.png" 
                     alt="Nabilla" 
                     className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 transition-all duration-700" 
                   />
@@ -276,7 +276,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, idx }) => {
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
           className="relative aspect-[16/10] overflow-hidden mb-10 rounded-[20px] bg-zinc-900 border border-white/5 shadow-xl group-hover:shadow-2xl group-hover:shadow-blue-600/15 transition-all duration-500"
         >
-          {['riize-page', 'sekitar', 'ana-ai', 'ausrelief'].includes(project.slug) && (
+          {['riize-page', 'sekitar'].includes(project.slug) && (
             <div className="absolute top-6 left-6 z-10">
               <span className="bg-blue-600 text-white text-[0.6rem] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg shadow-blue-500/20">
                 Case Study

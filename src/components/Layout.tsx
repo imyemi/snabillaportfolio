@@ -64,22 +64,59 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="min-h-screen selection:bg-blue-600 selection:text-white scroll-smooth">
       {/* Custom Cursor */}
       <motion.div 
-        className="fixed top-0 left-0 flex items-center justify-center pointer-events-none z-[9999] hidden md:flex text-2xl"
+        className="fixed top-0 left-0 flex items-center justify-center pointer-events-none z-[9999] hidden md:flex"
         animate={{
-          x: mousePos.x - 16,
-          y: mousePos.y - 16,
-          scale: isHovering ? 1.5 : 1,
+          x: mousePos.x - 24,
+          y: mousePos.y - 18,
+          scale: isHovering ? 1.4 : 1,
           rotate: isHovering ? [0, -10, 10, 0] : 0
         }}
         transition={{ 
           type: 'spring', 
-          damping: 25, 
-          stiffness: 300, 
-          mass: 0.5,
-          rotate: { repeat: isHovering ? Infinity : 0, duration: 0.5 }
+          damping: 30, 
+          stiffness: 400, 
+          mass: 0.6,
+          rotate: { repeat: isHovering ? Infinity : 0, duration: 0.6 }
         }}
       >
-        🐈‍⬛
+        <svg 
+          width="48" 
+          height="48" 
+          viewBox="0 0 40 40" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          className="drop-shadow-lg"
+        >
+          {/* Cat Head Silhouette (Based on drawing) */}
+          <path 
+            d="M20 31C12 31 6 26 6 18C6 13 8 11 11 6C12.5 3.5 16 8 16 8C16 8 18 7 20 7C22 7 24 8 24 8C24 8 27.5 3.5 29 6C32 11 34 13 34 18C34 26 28 31 20 31Z" 
+            fill="#111111" 
+          />
+          
+          {/* Whiskers - Left */}
+          <path d="M7 21L2 20.5" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M6.5 24L1 24" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M7 27L2 27.5" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" />
+          
+          {/* Whiskers - Right */}
+          <path d="M33 21L38 20.5" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M33.5 24L39 24" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M33 27L38 27.5" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" />
+
+          {/* Round Cute Eyes */}
+          <circle cx="14.5" cy="19.5" r="4.5" fill="white" />
+          <circle cx="15" cy="20" r="3" fill="black" />
+          <circle cx="14" cy="18.5" r="1" fill="white" />
+          <circle cx="16" cy="21.5" r="0.5" fill="white" />
+
+          <circle cx="25.5" cy="19.5" r="4.5" fill="white" />
+          <circle cx="26" cy="20" r="3" fill="black" />
+          <circle cx="25" cy="18.5" r="1" fill="white" />
+          <circle cx="27" cy="21.5" r="0.5" fill="white" />
+          
+          {/* Small Nose */}
+          <ellipse cx="20" cy="24.5" rx="1.8" ry="1.2" fill="white" opacity="0.9" />
+        </svg>
       </motion.div>
 
       {/* Scroll Progress Bar */}

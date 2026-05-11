@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from '../components/Layout';
 import { Reveal } from '../components/Reveal';
-import { ArrowUpRight, Figma, PenTool, Camera, Palette, Layers, Terminal, Github, ExternalLink, Mail, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Figma, PenTool, Camera, Palette, Layers, Terminal, Github, ExternalLink, Mail, Sparkles, Zap, Cloud, Globe, Users } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const AboutPage = () => {
@@ -15,7 +15,7 @@ const AboutPage = () => {
                  02 — ABOUT ME
               </Reveal>
               <Reveal delay={0.1}>
-                <h1 className="text-[clamp(2.5rem,8vw,5rem)] font-extrabold tracking-tight leading-[1] mb-12">
+                <h1 className="text-[48px] font-extrabold tracking-tight leading-[1] mb-12">
                   Driven by <em className="italic text-white/40 not-italic font-serif">Design</em>, <br />
                   Guided by <em className="italic text-white/40 not-italic font-serif">Research</em>.
                 </h1>
@@ -44,7 +44,7 @@ const AboutPage = () => {
               <Reveal delay={0.3} className="relative">
                 <div className="aspect-[4/5] bg-zinc-900 rounded-[20px] overflow-hidden shadow-2xl relative group">
                   <img 
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80" 
+                    src="https://raw.githubusercontent.com/imyemi/snabillaportfolio/9ac9c0c07abd6d902f45d238b26642cc84c6750b/miphoto.png" 
                     alt="Nabilla" 
                     className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 transition-all duration-700" 
                   />
@@ -70,27 +70,33 @@ const AboutPage = () => {
       {/* ─── MY STACK ─── */}
       <section className="px-5 md:px-10 py-32 bg-white text-[#111]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
+          <div className="text-center mb-24 max-w-4xl mx-auto">
             <Reveal className="text-[0.6rem] font-bold uppercase tracking-[0.3em] text-[#111]/30 mb-8 flex items-center justify-center gap-3">
               <span className="w-8 h-[1px] bg-black/10"></span> My Stack
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-[clamp(1.6rem,4.5vw,3.8rem)] font-extrabold tracking-[-0.05em] leading-[1.1] mb-10 text-[#111] max-w-4xl mx-auto">
-                Tools that help me deliver <em className="text-blue-600 italic not-italic">precision.</em>
+              <h2 className="text-[48px] font-extrabold tracking-[-0.05em] leading-[1.1] mb-8 text-[#111]">
+                Tools that help me deliver <em className="text-blue-600 italic not-italic">precision: title</em>
               </h2>
+              <p className="text-[1rem] text-[#111]/50 font-medium leading-relaxed max-w-2xl mx-auto">
+                These tools help me collaborate effectively with teams, communicate ideas clearly, and deliver user-centered digital experiences with efficiency and precision.
+              </p>
             </Reveal>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: "UI/UX Design", desc: "User-Centered Design & Information Architecture", icon: <Layers className="w-5 h-5" />, color: "bg-blue-50 text-blue-600" },
-              { name: "Complex Systems", desc: "Simplifying complex healthcare & fintech systems", icon: <Terminal className="w-5 h-5" />, color: "bg-emerald-50 text-emerald-600" },
-              { name: "Illustrations", desc: "2D Illustration & Iconography", icon: <Palette className="w-5 h-5" />, color: "bg-purple-50 text-purple-600" },
-              { name: "Design Systems", desc: "Building comprehensive UI components & libraries", icon: <ExternalLink className="w-5 h-5" />, color: "bg-orange-50 text-orange-600" },
-              { name: "Collaboration", desc: "Cross-functional team alignment & design thinking", icon: <Mail className="w-5 h-5" />, color: "bg-pink-50 text-pink-600" },
-              { name: "AI Assisted", desc: "Leveraging AI for design efficiency", icon: <Sparkles className="w-5 h-5" />, color: "bg-yellow-50 text-yellow-600" }
+              { name: "Figma", desc: "UI/UX Design + Graphic Design", icon: <Figma className="w-5 h-5" />, color: "bg-blue-50 text-blue-600" },
+              { name: "Adobe Photoshop", desc: "Vector Illustration + Graphic Design", icon: <PenTool className="w-5 h-5" />, color: "bg-sky-50 text-sky-600" },
+              { name: "Adobe Photoshop", desc: "Photo Editing + 2D Illustration", icon: <Camera className="w-5 h-5" />, color: "bg-indigo-50 text-indigo-600" },
+              { name: "Procreate", desc: "2D Illustration", icon: <Palette className="w-5 h-5" />, color: "bg-purple-50 text-purple-600" },
+              { name: "Framer", desc: "Web Design (no code)", icon: <Zap className="w-5 h-5" />, color: "bg-orange-50 text-orange-600" },
+              { name: "Google AI Studio", desc: "AI-Powered Prototyping & Models", icon: <Sparkles className="w-5 h-5" />, color: "bg-yellow-50 text-yellow-600" },
+              { name: "Github", desc: "Code Versioning & Collaboration", icon: <Github className="w-5 h-5" />, color: "bg-zinc-50 text-zinc-900" },
+              { name: "Vercel", desc: "Deployment & Frontend Hosting", icon: <Cloud className="w-5 h-5" />, color: "bg-black/5 text-black" },
+              { name: "Google Workspace", desc: "Collaboration, communication, and work efficiency", icon: <Users className="w-5 h-5" />, color: "bg-pink-50 text-pink-600" }
             ].map((skill, i) => (
-              <Reveal key={skill.name} delay={i * 0.05}>
+              <Reveal key={`${skill.name}-${i}`} delay={i * 0.05}>
                 <div className="p-8 rounded-[20px] border border-black/5 hover:border-black/10 transition-all group hover:shadow-xl hover:-translate-y-1 bg-white h-full flex flex-col justify-between">
                   <div>
                     <div className={`w-12 h-12 rounded-[20px] ${skill.color} flex items-center justify-center mb-10 transition-transform group-hover:scale-110 duration-500`}>
@@ -114,7 +120,7 @@ const AboutPage = () => {
               03 — EXPERIENCE
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-extrabold tracking-[-0.05em] leading-[1] text-[#111]">
+              <h2 className="text-[48px] font-extrabold tracking-[-0.05em] leading-[1] text-[#111]">
                 Professional <em className="italic text-blue-600 not-italic">Journey</em>.
               </h2>
             </Reveal>
@@ -203,7 +209,7 @@ const AboutPage = () => {
               06 — PROCESS
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-[clamp(4rem,12vw,10rem)] font-extrabold tracking-[-0.06em] leading-none mb-20">
+              <h2 className="text-[48px] font-extrabold tracking-[-0.06em] leading-none mb-20">
                 Process
               </h2>
             </Reveal>
